@@ -12,12 +12,20 @@ export interface Config {
   sourceDir: string;
   outputDir: string;
   match?: RegExp;
+  ignoredExtensions?: string[];
 }
-
-const ignoredExtensions = ['jpg', 'jpeg', 'png', 'webp', 'svg', 'ico', 'pdf'];
 
 export function build(config: Config) {
   const match = config.match || /[^a-zA-Z]t\(['"]([^'"]+)['"]\)/g;
+  const ignoredExtensions = config.ignoredExtensions || [
+    'jpg',
+    'jpeg',
+    'png',
+    'webp',
+    'svg',
+    'ico',
+    'pdf',
+  ];
   const start = Date.now();
   const existingLocales: Record<string, Record<string, string>> = {};
 
