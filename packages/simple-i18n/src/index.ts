@@ -13,7 +13,7 @@ export interface Config {
   outputDir: string;
 }
 
-const match = /[^a-zA-Z]t\('([^']+)'\)/g;
+const match = /[^a-zA-Z]t\(['"]([^'"]+)['"]\)/g;
 
 const ignoredExtensions = ['jpg', 'jpeg', 'png', 'webp', 'svg', 'ico', 'pdf'];
 
