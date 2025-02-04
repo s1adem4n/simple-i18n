@@ -1,7 +1,14 @@
 {
   "name": "@slademan/simple-i18n",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "main": "dist/index.js",
   "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {

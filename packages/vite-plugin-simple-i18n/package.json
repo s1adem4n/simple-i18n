@@ -1,14 +1,21 @@
 {
   "name": "vite-plugin-simple-i18n",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "main": "dist/index.js",
   "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsc"
   },
   "dependencies": {
-    "@slademan/simple-i18n": "^1.0.1"
+    "@slademan/simple-i18n": "^1.0.2"
   },
   "peerDependencies": {
     "vite": "^6.0.0",
