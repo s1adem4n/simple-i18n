@@ -1,27 +1,29 @@
 import type { Plugin } from 'vite';
-import { build, type Options } from 'simple-i18n';
+import { build, type Config } from '@slademan/simple-i18n';
 
-export default function i18n(options: Options): Plugin {
+function escapeRegex(str: string) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+export default function i18n(config: Config): Plugin {
   return {
     name: 'i18n',
-    async buildStart() {
-      await build(options);
+    buildStart() {
+      build(config);
     },
-    async handleHotUpdate({ file }) {
+    handleHotUpdate({ file }) {
       let re;
       if (process.platform === 'win32') {
-        re = new RegExp(
-          `.*\\\\${options.outputDir.replace(/\\/g, '\\\\')}\\\\.*\\.json`
-        );
+        re = new RegExp(`.*\\\\${escapeRegex(config.outputDir)}\\\\.*\\.json`);
       } else {
-        re = new RegExp(`.*/${options.outputDir}/.*\\.json`);
+        re = new RegExp(`.*/${escapeRegex(config.outputDir)}/.*\\.json`);
       }
 
       if (re.test(file)) {
         return;
       }
 
-      await build(options);
+      build(config);
     },
   };
 }

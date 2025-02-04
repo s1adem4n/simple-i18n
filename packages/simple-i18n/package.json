@@ -1,6 +1,6 @@
 {
-  "name": "simple-i18n",
-  "version": "1.0.0",
+  "name": "@slademan/simple-i18n",
+  "version": "1.0.1",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/s1adem4n/simple-i18n.git"
+    "url": "https://github.com/s1adem4n/simple-i18n"
   },
   "license": "MIT",
   "homepage": "https://github.com/s1adem4n/simple-i18n#readme"
