@@ -11,13 +11,13 @@ export interface Config {
   referenceLanguage: string;
   sourceDir: string;
   outputDir: string;
+  match?: RegExp;
 }
-
-const match = /[^a-zA-Z]t\(['"]([^'"]+)['"]\)/g;
 
 const ignoredExtensions = ['jpg', 'jpeg', 'png', 'webp', 'svg', 'ico', 'pdf'];
 
 export function build(config: Config) {
+  const match = config.match || /[^a-zA-Z]t\(['"]([^'"]+)['"]\)/g;
   const start = Date.now();
   const existingLocales: Record<string, Record<string, string>> = {};
 
