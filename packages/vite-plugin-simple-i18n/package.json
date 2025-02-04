@@ -1,0 +1,26 @@
+{
+  "name": "vite-plugin-simple-i18n",
+  "version": "1.0.0",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "simple-i18n": "^1.0.0"
+  },
+  "peerDependencies": {
+    "vite": "^6.0.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s1adem4n/simple-i18n.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/s1adem4n/simple-i18n#readme"
+}
